@@ -1,9 +1,14 @@
 include mdo-config.mk
 
-distinct-files := diff -r --brief release/ site/ | grep -v : | cut -d ' ' -f 3,5
+diff := diff -ur release/ site/
+distinct-files := $(diff) --brief | grep -v : | cut -d ' ' -f 3,5
 
 list-files:
-	$(distinct-files) | cut -d ' ' -f 2
+	@$(distinct-files) | cut -d ' ' -f 2
+
+diff: release site
+	$(diff) | awk -f split-diffs.awk 
+
 
 release: ${RELEASE_ARCH}
 	test -d $@ || mkdir -p $@
