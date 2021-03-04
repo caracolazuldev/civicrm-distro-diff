@@ -9,6 +9,9 @@ list-files:
 diff: release site
 	$(diff) | awk -f split-diffs.awk 
 
+unique.list:
+	$(diff) --brief | grep -v distin | tee $@
+.PHONY: unique.list
 
 release: ${RELEASE_ARCH}
 	test -d $@ || mkdir -p $@
