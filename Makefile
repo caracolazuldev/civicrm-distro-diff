@@ -3,6 +3,8 @@ include mdo-config.mk
 diff := diff -ur release/ site/
 distinct-files := $(diff) --brief | grep -v : | cut -d ' ' -f 3,5
 
+report: clean diff unique.list
+
 list-files:
 	@$(distinct-files) | cut -d ' ' -f 2
 
