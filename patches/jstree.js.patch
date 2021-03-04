@@ -1,0 +1,20 @@
+--- release/civicrm/bower_components/jstree/dist/jstree.js	2018-01-02 04:04:56.000000000 -0500
++++ site/civicrm/bower_components/jstree/dist/jstree.js	2018-10-22 13:37:38.000000000 -0400
+@@ -1820,8 +1820,8 @@
+ 						// 2) populate children (foreach)
+ 						for(i = 0, j = dat.length; i < j; i++) {
+ 							if (!m[dat[i].parent.toString()]) {
+-								this._data.core.last_error = { 'error' : 'parse', 'plugin' : 'core', 'id' : 'core_07', 'reason' : 'Node with invalid parent', 'data' : JSON.stringify({ 'id' : dat[i].id.toString(), 'parent' : dat[i].parent.toString() }) };
+-								this.settings.core.error.call(this, this._data.core.last_error);
++								//this._data.core.last_error = { 'error' : 'parse', 'plugin' : 'core', 'id' : 'core_07', 'reason' : 'Node with invalid parent', 'data' : JSON.stringify({ 'id' : dat[i].id.toString(), 'parent' : dat[i].parent.toString() }) };
++								//this.settings.core.error.call(this, this._data.core.last_error);
+ 								continue;
+ 							}
+ 
+@@ -8586,4 +8586,4 @@
+ 		} catch(ignore) { }
+ 	}
+ 
+-}));
+\ No hay ningún carácter de nueva línea al final del archivo
++}));

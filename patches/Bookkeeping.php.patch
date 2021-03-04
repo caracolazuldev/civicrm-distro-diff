@@ -1,0 +1,48 @@
+--- release/civicrm/CRM/Report/Form/Contribute/Bookkeeping.php	2018-07-31 22:59:01.000000000 -0400
++++ site/civicrm/CRM/Report/Form/Contribute/Bookkeeping.php	2019-03-21 12:24:40.000000000 -0400
+@@ -66,7 +66,7 @@
+           'sort_name' => array(
+             'title' => ts('Contact Name'),
+             'required' => TRUE,
+-            'no_repeat' => TRUE,
++            //'no_repeat' => TRUE,
+           ),
+           'first_name' => array(
+             'title' => ts('First Name'),
+@@ -333,6 +333,7 @@
+         'order_bys' => array(
+           'contribution_id' => array('title' => ts('Contribution #')),
+           'contribution_status_id' => array('title' => ts('Contribution Status')),
++          'receive_date'  => array('title' => ts('Date Received')),
+         ),
+         'grouping' => 'contri-fields',
+       ),
+@@ -381,7 +382,7 @@
+           'trxn_date' => array(
+             'title' => ts('Transaction Date'),
+             'operatorType' => CRM_Report_Form::OP_DATE,
+-            'type' => CRM_Utils_Type::T_DATE,
++            'type' => CRM_Utils_Type::T_DATE + CRM_Utils_Type::T_TIME,
+           ),
+           'status_id' => array(
+             'title' => ts('Financial Transaction Status'),
+@@ -399,6 +400,7 @@
+         ),
+         'order_bys' => array(
+           'payment_instrument_id' => array('title' => ts('Payment Method')),
++          'trxn_date' =>  array('title' => ts('Transaction Date')),
+         ),
+       ),
+       'civicrm_entity_financial_trxn' => array(
+@@ -553,8 +555,10 @@
+             $relative = CRM_Utils_Array::value("{$fieldName}_relative", $this->_params);
+             $from = CRM_Utils_Array::value("{$fieldName}_from", $this->_params);
+             $to = CRM_Utils_Array::value("{$fieldName}_to", $this->_params);
++            $fromTime = CRM_Utils_Array::value("{$fieldName}_from_time", $this->_params);
++            $toTime = CRM_Utils_Array::value("{$fieldName}_to_time", $this->_params);
+ 
+-            $clause = $this->dateClause($field['name'], $relative, $from, $to, $field['type']);
++            $clause = $this->dateClause($field['name'], $relative, $from, $to, $field['type'], $fromTime, $toTime);
+           }
+           else {
+             $op = CRM_Utils_Array::value("{$fieldName}_op", $this->_params);

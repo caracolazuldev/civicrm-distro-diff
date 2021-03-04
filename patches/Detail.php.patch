@@ -1,0 +1,13 @@
+--- release/civicrm/CRM/Report/Form/Member/Detail.php	2018-07-31 22:56:39.000000000 -0400
++++ site/civicrm/CRM/Report/Form/Member/Detail.php	2018-12-20 04:56:24.000000000 -0500
+@@ -101,6 +101,10 @@
+       'civicrm_membership' => array(
+         'dao' => 'CRM_Member_DAO_Membership',
+         'fields' => array(
++          'membership_id' => array(
++            'title' => ts('Membership ID'),
++            'default' => TRUE,
++          ),
+           'membership_type_id' => array(
+             'title' => ts('Membership Type'),
+             'required' => TRUE,

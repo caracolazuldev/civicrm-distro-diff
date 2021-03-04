@@ -1,0 +1,10 @@
+--- release/civicrm/CRM/Contribute/xml/Menu/Contribute.xml	2018-07-31 22:56:39.000000000 -0400
++++ site/civicrm/CRM/Contribute/xml/Menu/Contribute.xml	2019-01-22 14:51:25.000000000 -0500
+@@ -307,6 +307,7 @@
+     <access_callback>CRM_Core_Permission::checkDownloadInvoice</access_callback>
+     <page_type>1</page_type>
+     <weight>620</weight>
++    <is_public>true</is_public>
+     <component>CiviContribute</component>
+   </item>
+   <item>

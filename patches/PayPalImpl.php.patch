@@ -1,0 +1,11 @@
+--- release/civicrm/CRM/Core/Payment/PayPalImpl.php	2018-07-31 22:59:01.000000000 -0400
++++ site/civicrm/CRM/Core/Payment/PayPalImpl.php	2019-01-22 14:51:25.000000000 -0500
+@@ -153,7 +153,7 @@
+           'name' => 'paypal_express',
+         ));
+       }
+-      if ($this->isPayPalType($this::PAYPAL_PRO)) {
++      if (false && $this->isPayPalType($this::PAYPAL_PRO)) {
+         CRM_Core_Region::instance('billing-block-pre')->add(array(
+           'template' => 'CRM/Financial/Form/PaypalPro.tpl',
+         ));

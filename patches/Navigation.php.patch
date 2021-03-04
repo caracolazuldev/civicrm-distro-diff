@@ -1,0 +1,11 @@
+--- release/civicrm/CRM/Admin/Page/Navigation.php	2018-07-31 22:56:39.000000000 -0400
++++ site/civicrm/CRM/Admin/Page/Navigation.php	2018-10-22 13:38:54.000000000 -0400
+@@ -105,7 +105,7 @@
+ 
+     // Add jstree support
+     CRM_Core_Resources::singleton()
+-      ->addScriptFile('civicrm', 'bower_components/jstree/dist/jstree.min.js', 0, 'html-header')
++      ->addScriptFile('civicrm', 'bower_components/jstree/dist/jstree.js', 0, 'html-header')
+       ->addStyleFile('civicrm', 'bower_components/jstree/dist/themes/default/style.min.css');
+   }
+ 

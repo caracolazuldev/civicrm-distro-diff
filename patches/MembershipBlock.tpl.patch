@@ -1,0 +1,18 @@
+--- release/civicrm/templates/CRM/Member/Form/MembershipBlock.tpl	2018-07-31 22:56:40.000000000 -0400
++++ site/civicrm/templates/CRM/Member/Form/MembershipBlock.tpl	2019-02-25 13:56:15.000000000 -0500
+@@ -169,13 +169,13 @@
+             cj('#membership_type-label').hide();
+             cj('#membership_type-block').hide();
+             cj('#displayFee').hide();
+-            cj('#separatePayment').hide();
++            //cj('#separatePayment').hide();
+             cj('#quickConfigConvertMessage').hide();
+         } else {
+             cj('#membership_type-label').show();
+             cj('#membership_type-block').show();
+             cj('#displayFee').show();
+-            cj('#separatePayment').show();
++           // cj('#separatePayment').show();
+         }
+     }
+ </script>

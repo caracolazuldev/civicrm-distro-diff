@@ -1,0 +1,11 @@
+--- release/civicrm/CRM/Price/DAO/LineItem.php	2018-08-01 17:57:22.000000000 -0400
++++ site/civicrm/CRM/Price/DAO/LineItem.php	2019-05-01 01:36:15.000000000 -0400
+@@ -223,7 +223,7 @@
+           'type' => CRM_Utils_Type::T_STRING,
+           'title' => ts('Line Item Label'),
+           'description' => 'descriptive label for item - from price_field_value.label',
+-          'maxlength' => 255,
++          'maxlength' => 512,
+           'size' => CRM_Utils_Type::HUGE,
+           'default' => 'NULL',
+           'table_name' => 'civicrm_line_item',
