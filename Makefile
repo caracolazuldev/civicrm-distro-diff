@@ -24,5 +24,6 @@ site : ${SITE_ARCH}
 	tar xzf ${SITE_ARCH}  --xform='s#${CIVI_ROOT}#civicrm/#' -C $@ ${CIVI_ROOT}
 
 clean:
+	test ! -d patches || rm -rf patches
 	test ! -d release || rm -rf release
 	test ! -d site || rm -rf site
